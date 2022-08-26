@@ -3,6 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "author": "Moises Barillas",
+  "description": "Pagina de películas utilizando la api de themoviedb.",
+  "keywords": [
+    "react",
+    "wouter",
+    "typescript"
+
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

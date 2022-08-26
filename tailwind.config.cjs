@@ -4,10 +4,18 @@ module.exports = {
 	theme: {
 		extend: {
 			width: {
-				card: '700px',
+				layout: '90%',
+				card: '600px',
+				carousel: '150px',
+				'carousel-lg': '200px',
+				'carousel-xl': '205px',
 			},
+
 			height: {
 				card: '500px',
+				carousel: '180px',
+				'carousel-lg': '240px',
+				'carousel-xl': '245px',
 			},
 		},
 		colors: {
