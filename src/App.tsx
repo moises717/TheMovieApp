@@ -1,12 +1,15 @@
 import { Layout } from "@layout/Layout";
+import { MoviesProvider } from "./context/MoviesContext";
 import { AppRouter } from "./router/AppRouter";
 
 function App() {
 
   return (
-    <Layout>
-      <AppRouter />
-    </Layout>
+    <MoviesProvider>
+      <Layout>
+        <AppRouter />
+      </Layout>
+    </MoviesProvider>
   )
 }
 

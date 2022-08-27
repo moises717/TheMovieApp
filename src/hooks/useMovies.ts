@@ -2,23 +2,27 @@ import {useEffect, useState} from 'react';
 import {getMovies} from '@services/theMovieDbApi';
 import {TheMovieDbResponse} from '../interfaces/TheMovieDbResponse';
 
-type mediaCategory = 'movie' | 'tv' | 'network' | 'people' | 'review';
+export const useMovies = () => {
+	const [popularMovies, setPopularMovies] = useState<TheMovieDbResponse[]>([]);
+	const [upcomingMovies, setUpcomingMovies] = useState<TheMovieDbResponse[]>([]);
+	const [nowPlayingMovies, setNowPlatingMovies] = useState<TheMovieDbResponse[]>([]);
 
-interface useMovies {
-	media?: mediaCategory;
-	category: string;
-}
-
-export const useMovies = ({category}: useMovies) => {
-	const [movies, setMovies] = useState<TheMovieDbResponse[]>([]);
+	const [loading, setLoading] = useState<boolean>(false);
 
 	useEffect(() => {
-		getMovies(category).then(({results}) => {
-			setMovies(results);
+		setLoading(true);
+		Promise.all([getMovies('popular'), getMovies('now_playing'), getMovies('upcoming')]).then((res) => {
+			setPopularMovies(res[0].results);
+			setNowPlatingMovies(res[1].results);
+			setUpcomingMovies(res[2].results);
+			setLoading(false);
 		});
 	}, []);
 
 	return {
-		movies,
+		popularMovies,
+		nowPlayingMovies,
+		upcomingMovies,
+		loading,
 	};
 };

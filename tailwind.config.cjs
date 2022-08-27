@@ -6,16 +6,15 @@ module.exports = {
 			width: {
 				layout: '90%',
 				card: '600px',
-				carousel: '150px',
-				'carousel-lg': '200px',
-				'carousel-xl': '205px',
+				carousel: '200px',
 			},
 
 			height: {
 				card: '500px',
-				carousel: '180px',
-				'carousel-lg': '240px',
-				'carousel-xl': '245px',
+				carousel: '230px',
+			},
+			boxShadow: {
+				cardPreview: '0px -0px 10px -4px rgba(52,152,219,0.61)',
 			},
 		},
 		colors: {
@@ -23,7 +22,7 @@ module.exports = {
 			primary: '#1E293B',
 			secondary: '#3498DB',
 			white: '#FFFFFF',
-			gray: '#dadada',
+			gray: '#6c757d',
 			gradient: 'linear-gradient(75.22deg, #00112E 41.43%, #607D8B 89.56%)',
 		},
 		screens: {
@@ -45,5 +44,5 @@ module.exports = {
 			// => @media (min-width: 1536px) { ... }
 		},
 	},
-	plugins: [],
+	plugins: [require('@tailwindcss/line-clamp')],
 };

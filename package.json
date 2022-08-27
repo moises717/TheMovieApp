@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@splidejs/react-splide": "^0.7.8",
+    "@tailwindcss/line-clamp": "^0.4.0",
     "i": "^0.3.7",
     "npm": "^8.18.0",
     "react": "^18.2.0",
