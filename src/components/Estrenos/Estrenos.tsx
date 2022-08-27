@@ -1,17 +1,8 @@
-import { useEffect, useState } from "react"
-import { TheMovieDbResponse } from "../../interfaces/TheMovieDbResponse"
-import { getMovies } from "../../services/theMovieDbApi"
+import { useMovies } from "@hooks/useMovies";
 import Carousel from "../Carousel/Carousel"
 
 export const Estrenos = () => {
-    const [movies, setMovies] = useState<TheMovieDbResponse[]>([])
-
-    useEffect(() => {
-        getMovies('now_playing').then(({ results }) => {
-            setMovies(results)
-        })
-    }, [])
-
+    const { movies } = useMovies({ category: 'now_playing' });
 
     return (
         <Carousel title="Estrenos">
