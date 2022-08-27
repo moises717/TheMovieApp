@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react"
-import { TheMovieDbResponse } from "../../interfaces/TheMovieDbResponse"
-import { getMovies } from "../../services/theMovieDbApi"
-import Carousel from "../Carousel/Carousel"
+import { useEffect, useState } from "react";
+import { TheMovieDbResponse } from "../../interfaces/TheMovieDbResponse";
+import { getMovies } from "../../services/theMovieDbApi";
+import Carousel from "../Carousel/Carousel";
+
 
 export const Populares = () => {
     const [movies, setMovies] = useState<TheMovieDbResponse[]>([])
@@ -14,10 +15,11 @@ export const Populares = () => {
 
 
     return (
+
         <Carousel title="Populares">
             {
-                movies?.map((item) => (
-                    <Carousel.CarouselImage key={item.id} image={item.poster_path} alt={item.title} />
+                movies.map((item) => (
+                    <Carousel.CarouselImage alt={item.title} image={item.poster_path} key={item.id} />
                 ))
             }
         </Carousel>
