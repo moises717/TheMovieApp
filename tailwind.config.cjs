@@ -8,7 +8,9 @@ module.exports = {
 				card: '600px',
 				carousel: '200px',
 			},
-
+			maxWidth: {
+				layout: '1800px',
+			},
 			height: {
 				card: '500px',
 				carousel: '230px',

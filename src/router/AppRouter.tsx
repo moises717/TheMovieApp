@@ -14,7 +14,9 @@ export const AppRouter = () => {
                 <div className="flex flex-col w-full">
                     <SearchForm />
                     <Route path="/" component={Home} />
-                    <Route path="search/:name" component={SearchResult} />
+                    <Route path="search/:name" >
+                        {(params) => <SearchResult searchQuery={params.name} />}
+                    </Route>
                 </div>
                 <HomePreviewCard />
             </div>
